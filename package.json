@@ -1,0 +1,36 @@
+{
+  "name": "number-array-from-range",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Ben Meyrick <bameyrick@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "rm -rf ./dist && yarn lint && tsc -p tsconfig.json --outDir dist/",
+    "lint": "tslint --project tsconfig.json"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "prettier --print-width 140 --single-quote --trailing-comma es5 --parser typescript --write",
+      "tslint --project tsconfig.json",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --print-width 140 --single-quote --trailing-comma es5 --parser json --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "precommit": "lint-staged"
+    }
+  },
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5",
+    "tslint": "^6.1.2",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.9.7"
+  },
+  "dependencies": {}
+}
