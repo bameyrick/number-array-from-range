@@ -1,9 +1,20 @@
 {
   "name": "number-array-from-range",
   "version": "1.0.0",
-  "main": "index.js",
   "author": "Ben Meyrick <bameyrick@gmail.com>",
   "license": "MIT",
+  "description": "Creates an array of numbers for a given range",
+  "keywords": [
+    "array",
+    "range",
+    "number"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bameyrick/number-array-from-range.git"
+  },
   "scripts": {
     "build": "rm -rf ./dist && yarn lint && tsc -p tsconfig.json --outDir dist/",
     "lint": "tslint --project tsconfig.json"
