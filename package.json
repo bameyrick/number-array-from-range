@@ -1,6 +1,6 @@
 {
   "name": "number-array-from-range",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Ben Meyrick <bameyrick@gmail.com>",
   "license": "MIT",
   "description": "Creates an array of numbers for a given range",
@@ -16,18 +16,23 @@
     "url": "git+https://github.com/bameyrick/number-array-from-range.git"
   },
   "scripts": {
-    "build": "rm -rf ./dist && yarn lint && tsc -p tsconfig.json --outDir dist/",
-    "lint": "tslint --project tsconfig.json"
+    "build": " yarn lint && tsc -p tsconfig.json --outDir dist/",
+    "lint": "yarn tidy-clean && yarn tslint --project tsconfig.lint.json",
+    "test": "KARMA_SINGLE_RUN=false karma start ./karma.conf.js",
+    "test-single": "yarn tidy-clean && yarn karma start ./karma.conf.js",
+    "tidy-clean": "rm -rf dist coverage"
   },
   "lint-staged": {
     "*.ts": [
-      "prettier --print-width 140 --single-quote --trailing-comma es5 --parser typescript --write",
-      "tslint --project tsconfig.json",
-      "git add"
+      "prettier --print-width 140 --single-quote --arrow-parens avoid  --trailing-comma es5 --parser typescript --write",
+      "tslint --project tsconfig.lint.json",
+      "karma start ./karma.conf.js"
+    ],
+    "*.js": [
+      "prettier --print-width 140 --single-quote --arrow-parens avoid --trailing-comma es5 --parser babel --write"
     ],
     "*.json": [
-      "prettier --print-width 140 --single-quote --trailing-comma es5 --parser json --write",
-      "git add"
+      "prettier --print-width 140 --single-quote --trailing-comma es5 --parser json --write"
     ]
   },
   "husky": {
@@ -36,9 +41,19 @@
     }
   },
   "devDependencies": {
+    "@types/jasmine": "^3.5.11",
+    "codecov": "^3.7.2",
     "husky": "^4.2.5",
+    "jasmine-core": "^3.6.0",
+    "karma": "^5.1.0",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-cli": "^2.0.0",
+    "karma-coverage-istanbul-reporter": "^3.0.3",
+    "karma-jasmine": "^3.3.1",
+    "karma-typescript": "^5.0.3",
     "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
+    "puppeteer": "^5.2.1",
     "tslint": "^6.1.2",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.9.7"
