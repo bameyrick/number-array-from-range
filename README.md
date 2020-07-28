@@ -2,6 +2,11 @@
 
 Creates an array of numbers for a given range.
 
+[![GitHub release](https://img.shields.io/github/release/bameyrick/number-array-from-range.svg)](https://github.com/bameyrick/number-array-from-range/releases)
+[![Travis tests](https://img.shields.io/travis/bameyrick/number-array-from-range.svg)](https://travis-ci.org/bameyrick/number-array-from-range)
+[![codecov](https://codecov.io/gh/bameyrick/number-array-from-range/branch/master/graph/badge.svg)](https://codecov.io/gh/bameyrick/number-array-from-range)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/698e5d0ad4f64ffaa4aa7fe440faf7d6)](https://www.codacy.com/manual/bameyrick/number-array-from-range)
+
 ## Install
 
 You can install via npm or yarn.
@@ -25,7 +30,7 @@ yarn add number-array-from-range
 You can import using ES6 imports.
 
 ```javascript
-import { numberArrayFromRange } from 'number-array-form-range';
+import { numberArrayFromRange } from 'number-array-from-range';
 ```
 
 ### Arguments
@@ -39,7 +44,7 @@ numberArrayFromRange accepts two arguments:
 #### Example
 
 ```javascript
-import { numberArrayFromRange } from 'number-array-form-range';
+import { numberArrayFromRange } from 'number-array-from-range';
 
 const rangeArray = numberArrayFromRange(10, 20);
 // [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
