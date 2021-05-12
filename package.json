@@ -56,7 +56,6 @@
     "puppeteer": "^5.2.1",
     "tslint": "^6.1.2",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "^3.9.7"
-  },
-  "dependencies": {}
+    "typescript": "^4.2.4"
+  }
 }
